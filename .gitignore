@@ -1,0 +1,13 @@
+# Secrets — never commit these, even if copied in by mistake
+.ssh/
+.snowflake/
+.config/gh/
+.dbt/
+.azure*/
+.npmrc
+.streamlit/
+.bash_history
+**/secrets.toml
+**/*.pem
+**/*_rsa
+**/credentials

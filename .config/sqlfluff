@@ -1,0 +1,14 @@
+# Global sqlfluff config — all your SQL is Snowflake, so default to that dialect.
+# Override per-project by adding a .sqlfluff in a repo root.
+[sqlfluff]
+dialect = snowflake
+templater = raw
+max_line_length = 120
+exclude_rules = RF04   # allow keywords as identifiers (e.g. NAME, TYPE) — common in DW
+
+[sqlfluff:indentation]
+indented_joins = false
+template_blocks_indent = false
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper

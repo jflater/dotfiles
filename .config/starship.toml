@@ -1,0 +1,23 @@
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = "%H:%M:%S"
+style = "#f7768e"
+
+[custom.snow_conn_dev]
+command = "grep -m1 -oP '(?<=default_connection_name = \")[^\"]+' ~/.snowflake/config.toml"
+when = "grep -qm1 'default_connection_name = \"lcs_dev\"' ~/.snowflake/config.toml 2>/dev/null"
+format = '[❄ $output]($style) '
+style = "bold yellow"
+
+[custom.snow_conn_test]
+command = "grep -m1 -oP '(?<=default_connection_name = \")[^\"]+' ~/.snowflake/config.toml"
+when = "grep -qm1 'default_connection_name = \"lcs_test\"' ~/.snowflake/config.toml 2>/dev/null"
+format = '[❄ $output]($style) '
+style = "bold red"
+
+[custom.snow_conn_other]
+command = "grep -m1 -oP '(?<=default_connection_name = \")[^\"]+' ~/.snowflake/config.toml"
+when = "! grep -qm1 -E 'default_connection_name = \"(lcs_dev|lcs_test)\"' ~/.snowflake/config.toml 2>/dev/null"
+format = '[❄ $output]($style) '
+style = "bold blue"
