@@ -17,3 +17,7 @@ snow_deploy_prod() {
 
 # Directory tree (2 levels, colorized, no hidden files)
 alias t='tree -C -L 2 -I "__pycache__|*.pyc|.git"'
+
+# Always land in the same tmux session instead of spawning a new numbered
+# one each time — attaches to "main" if it exists, creates it if not.
+alias tm="tmux new-session -A -s main"

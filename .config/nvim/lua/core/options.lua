@@ -35,6 +35,10 @@ opt.backup = false
 opt.splitright = true
 opt.splitbelow = true
 
+-- Thicker split-border glyphs (default thin "|" is easy to miss next to
+-- the brighter WinSeparator color set in plugins/colorscheme.lua)
+opt.fillchars = { vert = "┃", horiz = "━" }
+
 -- Responsiveness
 opt.mouse = "a"
 opt.updatetime = 250 -- quicker diagnostics + CursorHold
